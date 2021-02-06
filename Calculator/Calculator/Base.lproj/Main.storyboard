@@ -20,6 +20,9 @@
                                 <rect key="frame" x="20" y="744" width="178" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="   0"/>
+                                <connections>
+                                    <action selector="number0Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dvt-8K-Q4m"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlO-kV-19w" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="214" y="744" width="84" height="84"/>
@@ -30,46 +33,73 @@
                                 <rect key="frame" x="312" y="744" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="="/>
+                                <connections>
+                                    <action selector="equalButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fzu-O4-KqU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kka-QN-IdL" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="312" y="646" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="sumButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QbV-ni-Hcw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pJX-IH-rf2" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="214" y="646" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="3"/>
+                                <connections>
+                                    <action selector="number3Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="48J-W6-PA6"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cn3-u6-zNC" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="18" y="646" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="1"/>
+                                <connections>
+                                    <action selector="number1Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZGw-57-9Td"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-Cg-lRX" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="116" y="646" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="2"/>
+                                <connections>
+                                    <action selector="number2Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yBQ-Op-2rB"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkf-qw-mkI" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="312" y="548" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="−"/>
+                                <connections>
+                                    <action selector="subButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="91N-pR-JaS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWs-aB-5OZ" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="214" y="548" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="6"/>
+                                <connections>
+                                    <action selector="number6Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YEq-2E-uUb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4u-Xb-Acb" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="18" y="548" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="4"/>
+                                <connections>
+                                    <action selector="number4Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QI0-RF-HuD"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Feq-of-goy" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="116" y="548" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="5"/>
+                                <connections>
+                                    <action selector="number5Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OIU-PK-5f8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gw-HK-pyh" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="312" y="450" width="84" height="84"/>
@@ -80,16 +110,25 @@
                                 <rect key="frame" x="214" y="450" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="9"/>
+                                <connections>
+                                    <action selector="number9Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="flF-Yr-eWR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjY-UY-APv" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="18" y="450" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="7"/>
+                                <connections>
+                                    <action selector="number7Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tUt-uT-yb1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIr-4g-4xi" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="116" y="450" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="8"/>
+                                <connections>
+                                    <action selector="number8Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vAZ-gS-Zvb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7A-Qp-9bC" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="312" y="352" width="84" height="84"/>
@@ -105,11 +144,17 @@
                                 <rect key="frame" x="18" y="352" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="AC"/>
+                                <connections>
+                                    <action selector="acButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4aI-WV-pDd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anI-HI-9Fc" customClass="SpecialOperatorBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="116" y="352" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="+/−"/>
+                                <connections>
+                                    <action selector="pmButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XHC-4p-Q4S"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xa-68-xAT">
                                 <rect key="frame" x="34" y="237" width="347" height="74"/>
@@ -122,6 +167,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="currentValueLabel" destination="5Xa-68-xAT" id="gvA-N7-pKn"/>
+                        <outlet property="subButton" destination="Vkf-qw-mkI" id="UFL-KY-zLL"/>
+                        <outlet property="sumButton" destination="kka-QN-IdL" id="R5m-zs-95b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

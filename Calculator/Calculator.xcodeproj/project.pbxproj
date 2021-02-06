@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0002A7025CEE99F0037C32D /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0002A6F25CEE99E0037C32D /* CustomButton.swift */; };
 		C0AAEB0025CD91790025CD38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AAEAFF25CD91790025CD38 /* AppDelegate.swift */; };
 		C0AAEB0225CD91790025CD38 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AAEB0125CD91790025CD38 /* SceneDelegate.swift */; };
 		C0AAEB0425CD91790025CD38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AAEB0325CD91790025CD38 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C0002A6F25CEE99E0037C32D /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C0AAEAFC25CD91790025CD38 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0AAEAFF25CD91790025CD38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0AAEB0125CD91790025CD38 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				C0AAEAFF25CD91790025CD38 /* AppDelegate.swift */,
 				C0AAEB0125CD91790025CD38 /* SceneDelegate.swift */,
 				C0AAEB0325CD91790025CD38 /* ViewController.swift */,
+				C0002A6F25CEE99E0037C32D /* CustomButton.swift */,
 				C0AAEB0525CD91790025CD38 /* Main.storyboard */,
 				C0AAEB0825CD917D0025CD38 /* Assets.xcassets */,
 				C0AAEB0A25CD917D0025CD38 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0002A7025CEE99F0037C32D /* CustomButton.swift in Sources */,
 				C0AAEB0425CD91790025CD38 /* ViewController.swift in Sources */,
 				C0AAEB0025CD91790025CD38 /* AppDelegate.swift in Sources */,
 				C0AAEB0225CD91790025CD38 /* SceneDelegate.swift in Sources */,
