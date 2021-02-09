@@ -8,11 +8,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    // 입력, 입력 취소가 편하게 하려고 배열로 입력 받음.
     var valueArr = [0]
-    var isSum = false
-    var isSub = false
     var inputNum = 0
-    var temp = 0
+    var temp = 0        // 화면에 보여지는 값 (중간 계산 과정)
+    var result = 0      // 실제 연산 결과
+    
+    // 과거 상태와 현재 상태 따로 저장
+    var pastState = ""
+    var presentState = "" // sum, sub, multi, div, ac, pm, percent
     
     @IBOutlet weak var currentValueLabel: UILabel!
     @IBOutlet weak var sumButton: UIButton!
@@ -20,7 +24,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // set background color
         self.view.backgroundColor = UIColor.black
     }
@@ -102,6 +105,7 @@ class ViewController: UIViewController {
     // Operator
     @IBAction func acButton(_ sender: Any) {
         temp = 0
+        result = 0
         valueArr = del(valueArr)
         inputNum = updateValue(valueArr)
         currentValueLabel.text = String(inputNum)
@@ -115,47 +119,111 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sumButton(_ sender: UIButton) {
-        inputNum = Int(currentValueLabel.text ?? "0")!
-        isSum = true
+        // 과거 상태와 현재 상태 update
+        pastState = presentState
+        presentState = "sum"
         
-        if isSub {
-            temp -= inputNum
-            isSub = false
-        } else {
-            temp += inputNum
+        // inputNum에 현재 화면에 보이는 Label 값 할당
+        inputNum = Int(currentValueLabel.text ?? "0")!
+        
+        // 과거 상태의 연산으로 temp 값 설정
+        temp = calculateTwoNumbers(state: pastState, num1: temp, num2: inputNum)
+        
+        // 과거 상태가 곱하기나 나누기면, result에 temp 값을 더함
+        // 과거 상태가 더하기나 빼기면, result에 inputNum 값을 연산
+        if pastState == "multi" || pastState == "div" {
+            result = calculateTwoNumbers(state: "sum", num1: result, num2: temp)
+        } else {        // sum or sub
+            result = calculateTwoNumbers(state: pastState, num1: result, num2: inputNum)
         }
         
-        currentValueLabel.text = String(temp)
+        // 덧셈 뺄셈의 경우는 result 를 바로 출력한다.
+        currentValueLabel.text = String(result)
         valueArr = del(valueArr)
         sumButton.isUserInteractionEnabled = false
     }
     
     @IBAction func subButton(_ sender: UIButton) {
+        pastState = presentState
+        presentState = "sub"
         inputNum = Int(currentValueLabel.text ?? "0")!
-        isSub = true
+
+        temp = calculateTwoNumbers(state: pastState, num1: temp, num2: inputNum)
         
-        if isSum {
-            temp += inputNum
-            isSum = false
-        } else {
-            temp -= inputNum
+        if pastState == "multi" || pastState == "div" {
+            result = calculateTwoNumbers(state: "sum", num1: result, num2: temp)
+        } else {        // sum or sub
+            result = calculateTwoNumbers(state: pastState, num1: result, num2: inputNum)
         }
 
-        currentValueLabel.text = String(temp)
+        currentValueLabel.text = String(result)
+        valueArr = del(valueArr)
+        subButton.isUserInteractionEnabled = false
+    }
+    
+    @IBAction func multiButton(_ sender: UIButton) {
+        pastState = presentState
+        presentState = "multi"
+        inputNum = Int(currentValueLabel.text ?? "0")!
+        
+        // 과거 상태가 sum 이면 현재 inputNum 을 temp 에 할당
+        // 과거 상태가 sub 이면 현재 inputNum 에 - 취한 값을 할당
+        // 과거 상태가 곱하기나 나누기면 과거 연산을 수행하여 temp 값에 할당
+        if pastState == "sum" {
+            temp = inputNum
+        } else if pastState == "sub" {
+            temp = -inputNum
+        } else {
+            temp = calculateTwoNumbers(state: pastState, num1: temp, num2: inputNum)
+        }
+        
+        // 곱셈 나눗셈의 경우 중간 연산 과정 (temp) 을 출력한다.
+        currentValueLabel.text = String(temp < 0 ? -temp : temp)
         valueArr = del(valueArr)
         subButton.isUserInteractionEnabled = false
     }
     
     @IBAction func equalButton(_ sender: Any) {
-        inputNum = Int(currentValueLabel.text ?? "0")!
-        if isSum {
-            temp += inputNum
-        } else if isSub {
-            temp -= inputNum
-        }
-        currentValueLabel.text = String(temp)
+        currentValueLabel.text = String(calculateTwoNumbers(state: presentState, num1: result, num2: inputNum))
     }
 
+}
+
+
+func calculateTwoNumbers(state: String, num1: Int, num2: Int) -> Int {
+    var result = 0
+    
+    switch state {
+    //case "input":
+        // 숫자 입력 코드
+    case "sum":
+        result = num1 + num2
+    case "sub":
+        result = num1 - num2
+    case "multi":
+        result = num1 * num2
+    case "div":
+        result = num1 / num2
+    default:
+        result = num2
+    }
+    return result
+}
+
+func calculateANumber(state: String, num: Int) -> Int {
+    var result = 0
+
+    switch state {
+    case "ac":
+        result = 0
+    case "pm":
+        result = -num
+    case "percent":
+        result = num / 100
+    default:
+        result = 0
+    }
+    return result
 }
 
 func enableButtons(_ button1: UIButton!, _ button2: UIButton!) {

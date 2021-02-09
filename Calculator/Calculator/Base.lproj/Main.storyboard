@@ -105,6 +105,9 @@
                                 <rect key="frame" x="312" y="450" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="×"/>
+                                <connections>
+                                    <action selector="multiButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="04u-zW-DFc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B94-7a-Uhb" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="214" y="450" width="84" height="84"/>
