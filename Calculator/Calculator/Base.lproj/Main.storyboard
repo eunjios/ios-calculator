@@ -28,6 +28,9 @@
                                 <rect key="frame" x="214" y="744" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="."/>
+                                <connections>
+                                    <action selector="dotButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sEr-V2-Irk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evC-mY-reT" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="312" y="744" width="84" height="84"/>
@@ -137,6 +140,9 @@
                                 <rect key="frame" x="312" y="352" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="÷"/>
+                                <connections>
+                                    <action selector="divButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oe8-vB-QAH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5c1-9G-jub" customClass="SpecialOperatorBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="214" y="352" width="84" height="84"/>

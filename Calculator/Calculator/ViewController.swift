@@ -8,11 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-    // 입력, 입력 취소가 편하게 하려고 배열로 입력 받음.
-    var valueArr = [0]
-    var inputNum = 0
-    var temp = 0        // 화면에 보여지는 값 (중간 계산 과정)
-    var result = 0      // 실제 연산 결과
+    var valueArr = ["0"]  // 입력, 입력 취소가 편하게 하려고 배열로 입력 받음.
+    var inputNum = 0.0    // 처음 입력된 수를 0으로 설정
+    var temp = 0.0        // 화면에 보여지는 값 (중간 계산 과정)
+    var result = 0.0      // 실제 연산 결과
     
     // 과거 상태와 현재 상태 따로 저장
     var pastState = ""
@@ -32,89 +31,97 @@ class ViewController: UIViewController {
     // --> 어떻게 코드를 간단하게 할지
     // --> valueArr.append(~~.text) 로만 바꾸면 아예 동일함
     // --> custombutton 처럼 하나로 어떻게 만들지
+    // --> 일단 기능부터 되는지 구현하고 나중에 코드 정리하자...
     @IBAction func number0Button(_ sender: Any) {
-        valueArr.append(0)
+        valueArr.append("0")
         inputNum = updateValue(valueArr)
-        currentValueLabel.text = String(inputNum)
+        currentValueLabel.text = inputNum - Double(Int(inputNum)) == 0 ? String(Int(inputNum)) : String(inputNum)
         enableButtons(sumButton, subButton)
     }
 
     @IBAction func number1Button(_ sender: Any) {
-        valueArr.append(1)
+        valueArr.append("1")
         inputNum = updateValue(valueArr)
-        currentValueLabel.text = String(inputNum)
+        currentValueLabel.text = inputNum - Double(Int(inputNum)) == 0 ? String(Int(inputNum)) : String(inputNum)
         enableButtons(sumButton, subButton)
     }
     
     @IBAction func number2Button(_ sender: Any) {
-        valueArr.append(2)
+        valueArr.append("2")
         inputNum = updateValue(valueArr)
-        currentValueLabel.text = String(inputNum)
+        currentValueLabel.text = inputNum - Double(Int(inputNum)) == 0 ? String(Int(inputNum)) : String(inputNum)
         enableButtons(sumButton, subButton)
     }
     
     @IBAction func number3Button(_ sender: Any) {
-        valueArr.append(3)
+        valueArr.append("3")
         inputNum = updateValue(valueArr)
-        currentValueLabel.text = String(inputNum)
+        currentValueLabel.text = inputNum - Double(Int(inputNum)) == 0 ? String(Int(inputNum)) : String(inputNum)
         enableButtons(sumButton, subButton)
     }
     
     @IBAction func number4Button(_ sender: Any) {
-        valueArr.append(4)
+        valueArr.append("4")
         inputNum = updateValue(valueArr)
-        currentValueLabel.text = String(inputNum)
+        currentValueLabel.text = inputNum - Double(Int(inputNum)) == 0 ? String(Int(inputNum)) : String(inputNum)
         enableButtons(sumButton, subButton)
     }
     
     @IBAction func number5Button(_ sender: Any) {
-        valueArr.append(5)
+        valueArr.append("5")
         inputNum = updateValue(valueArr)
-        currentValueLabel.text = String(inputNum)
+        currentValueLabel.text = inputNum - Double(Int(inputNum)) == 0 ? String(Int(inputNum)) : String(inputNum)
         enableButtons(sumButton, subButton)
     }
     
     @IBAction func number6Button(_ sender: Any) {
-        valueArr.append(6)
+        valueArr.append("6")
         inputNum = updateValue(valueArr)
-        currentValueLabel.text = String(inputNum)
+        currentValueLabel.text = inputNum - Double(Int(inputNum)) == 0 ? String(Int(inputNum)) : String(inputNum)
         enableButtons(sumButton, subButton)
     }
     
     @IBAction func number7Button(_ sender: Any) {
-        valueArr.append(7)
+        valueArr.append("7")
         inputNum = updateValue(valueArr)
-        currentValueLabel.text = String(inputNum)
+        currentValueLabel.text = inputNum - Double(Int(inputNum)) == 0 ? String(Int(inputNum)) : String(inputNum)
         enableButtons(sumButton, subButton)
     }
     
     @IBAction func number8Button(_ sender: Any) {
-        valueArr.append(8)
+        valueArr.append("8")
         inputNum = updateValue(valueArr)
-        currentValueLabel.text = String(inputNum)
+        currentValueLabel.text = inputNum - Double(Int(inputNum)) == 0 ? String(Int(inputNum)) : String(inputNum)
         enableButtons(sumButton, subButton)
     }
     
     @IBAction func number9Button(_ sender: Any) {
-        valueArr.append(9)
+        valueArr.append("9")
         inputNum = updateValue(valueArr)
-        currentValueLabel.text = String(inputNum)
+        currentValueLabel.text = inputNum - Double(Int(inputNum)) == 0 ? String(Int(inputNum)) : String(inputNum)
+        enableButtons(sumButton, subButton)
+    }
+    
+    @IBAction func dotButton(_ sender: Any) {
+        valueArr.append(".")
+        inputNum = updateValue(valueArr)
+        currentValueLabel.text = inputNum - Double(Int(inputNum)) == 0 ? String(Int(inputNum)) : String(inputNum)
         enableButtons(sumButton, subButton)
     }
     
     // Operator
     @IBAction func acButton(_ sender: Any) {
-        temp = 0
-        result = 0
+        temp = 0.0
+        result = 0.0
         valueArr = del(valueArr)
         inputNum = updateValue(valueArr)
-        currentValueLabel.text = String(inputNum)
+        currentValueLabel.text = inputNum - Double(Int(inputNum)) == 0 ? String(Int(inputNum)) : String(inputNum)
         enableButtons(sumButton, subButton)
     }
     
     @IBAction func pmButton(_ sender: Any) {
         inputNum = -inputNum
-        currentValueLabel.text = String(inputNum)
+        currentValueLabel.text = inputNum - Double(Int(inputNum)) == 0 ? String(Int(inputNum)) : String(inputNum)
         enableButtons(sumButton, subButton)
     }
     
@@ -124,7 +131,7 @@ class ViewController: UIViewController {
         presentState = "sum"
         
         // inputNum에 현재 화면에 보이는 Label 값 할당
-        inputNum = Int(currentValueLabel.text ?? "0")!
+        inputNum = Double(currentValueLabel.text ?? "0")!
         
         // 과거 상태의 연산으로 temp 값 설정
         temp = calculateTwoNumbers(state: pastState, num1: temp, num2: inputNum)
@@ -138,7 +145,7 @@ class ViewController: UIViewController {
         }
         
         // 덧셈 뺄셈의 경우는 result 를 바로 출력한다.
-        currentValueLabel.text = String(result)
+        currentValueLabel.text = result - Double(Int(result)) == 0 ? String(Int(result)) : String(result)
         valueArr = del(valueArr)
         sumButton.isUserInteractionEnabled = false
     }
@@ -146,7 +153,7 @@ class ViewController: UIViewController {
     @IBAction func subButton(_ sender: UIButton) {
         pastState = presentState
         presentState = "sub"
-        inputNum = Int(currentValueLabel.text ?? "0")!
+        inputNum = Double(currentValueLabel.text ?? "0")!
 
         temp = calculateTwoNumbers(state: pastState, num1: temp, num2: inputNum)
         
@@ -155,8 +162,8 @@ class ViewController: UIViewController {
         } else {        // sum or sub
             result = calculateTwoNumbers(state: pastState, num1: result, num2: inputNum)
         }
-
-        currentValueLabel.text = String(result)
+        
+        currentValueLabel.text = result - Double(Int(result)) == 0 ? String(Int(result)) : String(result)
         valueArr = del(valueArr)
         subButton.isUserInteractionEnabled = false
     }
@@ -164,7 +171,7 @@ class ViewController: UIViewController {
     @IBAction func multiButton(_ sender: UIButton) {
         pastState = presentState
         presentState = "multi"
-        inputNum = Int(currentValueLabel.text ?? "0")!
+        inputNum = Double(currentValueLabel.text ?? "0")!
         
         // 과거 상태가 sum 이면 현재 inputNum 을 temp 에 할당
         // 과거 상태가 sub 이면 현재 inputNum 에 - 취한 값을 할당
@@ -178,24 +185,46 @@ class ViewController: UIViewController {
         }
         
         // 곱셈 나눗셈의 경우 중간 연산 과정 (temp) 을 출력한다.
-        currentValueLabel.text = String(temp < 0 ? -temp : temp)
+        if temp < 0 {
+            temp = -temp
+        }
+        currentValueLabel.text = temp - Double(Int(temp)) == 0 ? String(Int(temp)) : String(temp)
         valueArr = del(valueArr)
         subButton.isUserInteractionEnabled = false
     }
     
+    @IBAction func divButton(_ sender: UIButton) {
+        pastState = presentState
+        presentState = "div"
+        inputNum = Double(currentValueLabel.text ?? "0")!
+        
+        if pastState == "sum" {
+            temp = inputNum
+        } else if pastState == "sub" {
+            temp = -inputNum
+        } else {
+            temp = calculateTwoNumbers(state: pastState, num1: temp, num2: inputNum)
+        }
+        if temp < 0 {
+            temp = -temp
+        }
+        currentValueLabel.text = temp - Double(Int(temp)) == 0 ? String(Int(temp)) : String(temp)
+        valueArr = del(valueArr)
+        subButton.isUserInteractionEnabled = false
+    }
+    
+    // 수정 필요
     @IBAction func equalButton(_ sender: Any) {
         currentValueLabel.text = String(calculateTwoNumbers(state: presentState, num1: result, num2: inputNum))
     }
 
 }
 
-
-func calculateTwoNumbers(state: String, num1: Int, num2: Int) -> Int {
-    var result = 0
+// calculate two numbers
+func calculateTwoNumbers(state: String, num1: Double, num2: Double) -> Double {
+    var result = 0.0
     
     switch state {
-    //case "input":
-        // 숫자 입력 코드
     case "sum":
         result = num1 + num2
     case "sub":
@@ -226,25 +255,30 @@ func calculateANumber(state: String, num: Int) -> Int {
     return result
 }
 
+// 출력 값만 (temp, result 등은 그냥 그대로 Double type)
+//func chooseIntDouble(_ value:Double) {
+//    if value - Double(Int(value)) == 0 {
+//        return Int(value)
+//    } else {
+//        return value
+//    }
+//}
+
+
+// update current value
+func updateValue(_ arr: [String]) -> Double {
+    let arrayToString = arr.map{String($0)}.joined()
+    return Double(arrayToString) ?? 0.0
+}
+
+// reset input value
+func del(_ arr: [String]) -> [String] {
+    var result = [String]()
+    result.append("0")
+    return result
+}
+
 func enableButtons(_ button1: UIButton!, _ button2: UIButton!) {
     button1.isUserInteractionEnabled = true
     button2.isUserInteractionEnabled = true
-}
-
-// update current value
-func updateValue(_ arr: [Int]) -> Int {
-    let arrayToString = arr.map{String($0)}.joined()
-    return Int(arrayToString) ?? 0
-}
-
-// update current label text
-func updateLabel(_ value: Int, _ label: UILabel) {
-    return label.text = String(value)
-}
-
-// delete current value
-func del(_ arr: [Int]) -> [Int] {
-    var result = [Int]()
-    result.append(0)
-    return result
 }
