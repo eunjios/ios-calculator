@@ -239,21 +239,21 @@ func calculateTwoNumbers(state: String, num1: Double, num2: Double) -> Double {
     return result
 }
 
-func calculateANumber(state: String, num: Int) -> Int {
-    var result = 0
-
-    switch state {
-    case "ac":
-        result = 0
-    case "pm":
-        result = -num
-    case "percent":
-        result = num / 100
-    default:
-        result = 0
-    }
-    return result
-}
+//func calculateANumber(state: String, num: Int) -> Int {
+//    var result = 0
+//
+//    switch state {
+//    case "ac":
+//        result = 0
+//    case "pm":
+//        result = -num
+//    case "percent":
+//        result = num / 100
+//    default:
+//        result = 0
+//    }
+//    return result
+//}
 
 // 출력 값만 (temp, result 등은 그냥 그대로 Double type)
 //func chooseIntDouble(_ value:Double) {
