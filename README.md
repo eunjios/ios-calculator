@@ -26,32 +26,33 @@ iPhone에 내장되어 있는 계산기와 기능 및 디자인을 동일하게 
 
 ## Trouble Shooting
 ### 곱하기 나누기 연산이 제대로 안되는 오류 
-* **문제 인식**
-  * 연산 결과가 예상과는 다르게 Int type 으로 변환이 안되고 `0.2000...` 과 같이 너무 길게 출력
-  * Double type 을 입력 받은 후 곱하기, 나누기 연산을 하면, 결과값이 다르게 나오는 상황 발생
-  * Swift 자체의 연산 결과가 틀림
-    ``` swift
-    print(3.3 * 3)  
-    // 9.89999999... 출력
-    ```
-     
+<u>**문제 인식**</u>
+1. 연산 결과가 예상과는 다르게 Int type 으로 변환이 안되고 `0.2000...` 과 같이 너무 길게 출력
+2. Double type 을 입력 받은 후 곱하기, 나누기 연산을 하면, 결과값이 다르게 나오는 상황 발생
+3. Swift 자체의 연산 결과가 틀림
+``` swift
+print(3.3 * 3)  
+// 9.89999999... 출력
+```
 
-* **Solution**
-  * `round()` 를 사용하여 소수점 아래 N번째 숫자에서 반올림 하도록 코드 작성
+<u>**Solution**</u>
+* `round()` 를 사용하여 소수점 아래 N번째 숫자에서 반올림 하도록 코드 작성
+  
      ``` swift
     print(round(3.3 * 3 * 1000) / 1000)
     // 9.9 출력
     ```
-  * 해당 function 수정
+  
+* 해당 function 수정
      ```swift
     func intOrDouble(_ value: Double) -> String {
-      let roundedValue = round(value * 1000000000) / 1000000000
-      if roundedValue - Double(Int(roundedValue)) == 0 {
-          return String(Int(roundedValue))
-      } else {
-          return String(roundedValue)
-      }
-    }
+          let roundedValue = round(value * 1000000000) / 1000000000
+          if roundedValue - Double(Int(roundedValue)) == 0 {
+               return String(Int(roundedValue))
+          } else {
+               return String(roundedValue)
+          }
+     }
      ```
 
 
