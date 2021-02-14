@@ -19,9 +19,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGh-tD-zkQ" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="20" y="744" width="178" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="   0"/>
+                                <inset key="contentEdgeInsets" minX="27" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="0"/>
                                 <connections>
-                                    <action selector="number0Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dvt-8K-Q4m"/>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L74-O3-W18"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlO-kV-19w" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
@@ -53,7 +54,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="3"/>
                                 <connections>
-                                    <action selector="number3Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="48J-W6-PA6"/>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UU5-WR-KUi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cn3-u6-zNC" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
@@ -61,7 +62,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="1"/>
                                 <connections>
-                                    <action selector="number1Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZGw-57-9Td"/>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kvZ-WU-yhf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuU-Cg-lRX" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
@@ -69,7 +70,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="2"/>
                                 <connections>
-                                    <action selector="number2Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yBQ-Op-2rB"/>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6HA-Dr-npb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkf-qw-mkI" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
@@ -85,7 +86,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="6"/>
                                 <connections>
-                                    <action selector="number6Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YEq-2E-uUb"/>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PuZ-Vt-Wss"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4u-Xb-Acb" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
@@ -93,7 +94,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="4"/>
                                 <connections>
-                                    <action selector="number4Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QI0-RF-HuD"/>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Lg-hZ-B0M"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Feq-of-goy" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
@@ -101,7 +102,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="5"/>
                                 <connections>
-                                    <action selector="number5Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OIU-PK-5f8"/>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9qS-F1-taE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gw-HK-pyh" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
@@ -117,7 +118,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="9"/>
                                 <connections>
-                                    <action selector="number9Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="flF-Yr-eWR"/>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6fG-5G-eq7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjY-UY-APv" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
@@ -125,7 +126,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="7"/>
                                 <connections>
-                                    <action selector="number7Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tUt-uT-yb1"/>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEZ-oh-K0s"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIr-4g-4xi" customClass="NumberBaseButton" customModule="Calculator" customModuleProvider="target">
@@ -133,7 +134,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="8"/>
                                 <connections>
-                                    <action selector="number8Button:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vAZ-gS-Zvb"/>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jQK-8E-Qcr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7A-Qp-9bC" customClass="OperatorBaseButton" customModule="Calculator" customModuleProvider="target">
@@ -148,6 +149,9 @@
                                 <rect key="frame" x="214" y="352" width="84" height="84"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="%"/>
+                                <connections>
+                                    <action selector="percentButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nfq-sq-Wbk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gay-G9-Hur" customClass="SpecialOperatorBaseButton" customModule="Calculator" customModuleProvider="target">
                                 <rect key="frame" x="18" y="352" width="84" height="84"/>

@@ -30,74 +30,9 @@ class ViewController: UIViewController {
     
     // 고민 1. numberNButton 모두 다 같은 기능을 수행함
     // --> 어떻게 코드를 간단하게 할지
-    // --> valueArr.append(~~.text) 로만 바꾸면 아예 동일함
-    // --> custombutton 처럼 하나로 어떻게 만들지
-    // --> 일단 기능부터 되는지 구현하고 나중에 코드 정리하자...
-    @IBAction func number0Button(_ sender: Any) {
-        valueArr.append("0")
-        inputNum = updateValue(valueArr)
-        currentValueLabel.text = intOrDouble(inputNum)
-        enableButtons(sumButton, subButton)
-    }
-
-    @IBAction func number1Button(_ sender: Any) {
-        valueArr.append("1")
-        inputNum = updateValue(valueArr)
-        currentValueLabel.text = intOrDouble(inputNum)
-        enableButtons(sumButton, subButton)
-    }
-    
-    @IBAction func number2Button(_ sender: Any) {
-        valueArr.append("2")
-        inputNum = updateValue(valueArr)
-        currentValueLabel.text = intOrDouble(inputNum)
-        enableButtons(sumButton, subButton)
-    }
-    
-    @IBAction func number3Button(_ sender: Any) {
-        valueArr.append("3")
-        inputNum = updateValue(valueArr)
-        currentValueLabel.text = intOrDouble(inputNum)
-        enableButtons(sumButton, subButton)
-    }
-    
-    @IBAction func number4Button(_ sender: Any) {
-        valueArr.append("4")
-        inputNum = updateValue(valueArr)
-        currentValueLabel.text = intOrDouble(inputNum)
-        enableButtons(sumButton, subButton)
-    }
-    
-    @IBAction func number5Button(_ sender: Any) {
-        valueArr.append("5")
-        inputNum = updateValue(valueArr)
-        currentValueLabel.text = intOrDouble(inputNum)
-        enableButtons(sumButton, subButton)
-    }
-    
-    @IBAction func number6Button(_ sender: Any) {
-        valueArr.append("6")
-        inputNum = updateValue(valueArr)
-        currentValueLabel.text = intOrDouble(inputNum)
-        enableButtons(sumButton, subButton)
-    }
-    
-    @IBAction func number7Button(_ sender: Any) {
-        valueArr.append("7")
-        inputNum = updateValue(valueArr)
-        currentValueLabel.text = intOrDouble(inputNum)
-        enableButtons(sumButton, subButton)
-    }
-    
-    @IBAction func number8Button(_ sender: Any) {
-        valueArr.append("8")
-        inputNum = updateValue(valueArr)
-        currentValueLabel.text = intOrDouble(inputNum)
-        enableButtons(sumButton, subButton)
-    }
-    
-    @IBAction func number9Button(_ sender: Any) {
-        valueArr.append("9")
+    // --> sender 를 통해 해결 가능!! 
+    @IBAction func numberButton(_ sender: UIButton) {
+        valueArr.append(sender.currentTitle!)
         inputNum = updateValue(valueArr)
         currentValueLabel.text = intOrDouble(inputNum)
         enableButtons(sumButton, subButton)
