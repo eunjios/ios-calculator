@@ -3,14 +3,15 @@
 
 ## :pushpin: Introduction
 iPhone에 내장되어 있는 계산기와 기능 및 디자인을 동일하게 만든 iOS 앱 입니다.  
-
+<br><br>
 ## :triangular_ruler: Functionality
-### 기본적인 연산 기능
+### 1. 기본적인 연산 기능
 기본적인 연산 (+, −, ×, ÷) 이 가능합니다.
 
-
 ![](https://user-images.githubusercontent.com/77034159/107869918-05d80800-6ed7-11eb-8470-e282013fcec2.gif)
-### 결과 출력
+<br><br>
+
+### 2. 결과 출력
    * 출력값을 `Int` type 으로 변환해도 상관 없는 경우, `Int` type 으로 출력 결과를 반환합니다.
      그러나 그렇지 않은 경우는 `Double` type 으로 출력합니다.
      
@@ -25,8 +26,9 @@ iPhone에 내장되어 있는 계산기와 기능 및 디자인을 동일하게 
 
 ![](https://user-images.githubusercontent.com/77034159/107870516-6453b500-6edc-11eb-8645-4727b353719e.gif)
 
+<br><br>
 ## :hammer: Trouble Shooting
-### 곱하기 나누기 연산이 제대로 안되는 오류 
+### 1. 곱하기 나누기 연산이 제대로 안되는 오류 
 <u>**문제 인식**</u>
 * 연산 결과가 예상과는 다르게 Int type 으로 변환이 안되고 `0.2000...` 과 같이 너무 길게 출력
 * Double type 을 입력 받은 후 곱하기, 나누기 연산을 하면, 결과값이 다르게 나오는 상황 발생
@@ -56,7 +58,7 @@ iPhone에 내장되어 있는 계산기와 기능 및 디자인을 동일하게 
           }
      }
      ```
-
+<br><br>
 
 ## :gear: Development Environment
 * Xcode 12.3
