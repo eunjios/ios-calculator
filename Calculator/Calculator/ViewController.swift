@@ -112,6 +112,9 @@ class ViewController: UIViewController {
     
     // Operator
     @IBAction func acButton(_ sender: Any) {
+        pastState = ""
+        presentState = ""
+        beforeMultiState = ""
         temp = 0.0
         result = 0.0
         valueArr = del(valueArr)
@@ -198,12 +201,9 @@ class ViewController: UIViewController {
         // 과거 상태가 sum 이면 현재 inputNum 을 temp 에 할당
         // 과거 상태가 sub 이면 현재 inputNum 에 - 취한 값을 할당
         // 과거 상태가 곱하기나 나누기면 과거 연산을 수행하여 temp 값에 할당
-        if pastState == "multi" || pastState == "div" || pastState == "" {
+        if pastState == "multi" || pastState == "div" {
             temp = calculateTwoNumbers(state: pastState, num1: temp, num2: inputNum)
-        } else if pastState == "sum" || pastState == "sub" {
-            temp = inputNum
-        } else {    // "eq"
-            result = inputNum
+        } else /*if pastState == "sum" || pastState == "sub" || pastState == "eq" || pastState == ""*/{
             temp = inputNum
         }
         
@@ -218,12 +218,11 @@ class ViewController: UIViewController {
         presentState = "div"
         inputNum = Double(currentValueLabel.text ?? "0")!
         
-        if pastState == "multi" || pastState == "div" || pastState == "" {
+        if pastState == "multi" || pastState == "div" {
             temp = calculateTwoNumbers(state: pastState, num1: temp, num2: inputNum)
-        } else if pastState == "sum" || pastState == "sub" || pastState == "eq" {
+        } else /* if pastState == "sum" || pastState == "sub" || pastState == "eq" || pastState == "" */ {
             temp = inputNum
         }
-        
         currentValueLabel.text = intOrDouble(temp)
         valueArr = del(valueArr)
         subButton.isUserInteractionEnabled = false
@@ -232,17 +231,20 @@ class ViewController: UIViewController {
     @IBAction func equalButton(_ sender: Any) {
         temp = calculateTwoNumbers(state: presentState, num1: temp, num2: inputNum)
         
-        if presentState == "multi" || presentState == "div" {
-            if beforeMultiState == "" {
-                result = calculateTwoNumbers(state: presentState, num1: result, num2: inputNum)
-            } else {
-                result = calculateTwoNumbers(state: beforeMultiState, num1: result, num2: temp)
-            }
+        if pastState == "" {
+            currentValueLabel.text = intOrDouble(temp)
         } else {
-            result = calculateTwoNumbers(state: presentState, num1: result, num2: inputNum)
+            if presentState == "multi" || presentState == "div" {
+                if beforeMultiState == "" {
+                    result = calculateTwoNumbers(state: presentState, num1: result, num2: inputNum)
+                } else {
+                    result = calculateTwoNumbers(state: beforeMultiState, num1: result, num2: temp)
+                }
+            } else {
+                result = calculateTwoNumbers(state: presentState, num1: result, num2: inputNum)
+            }
+            currentValueLabel.text = intOrDouble(result)
         }
-        
-        currentValueLabel.text = intOrDouble(result)
         presentState = "eq"
         beforeMultiState = ""
     }
@@ -270,7 +272,7 @@ func calculateTwoNumbers(state: String, num1: Double, num2: Double) -> Double {
 
 // return int type string or double type string
 func intOrDouble(_ value: Double) -> String {
-    let roundedValue = round(value * 1000000000) / 1000000000
+    let roundedValue = round(value * 1000000000) / 1000000000   // trouble shooting
     if roundedValue - Double(Int(roundedValue)) == 0 {
         return String(Int(roundedValue))
     } else {
