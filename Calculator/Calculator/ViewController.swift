@@ -236,7 +236,7 @@ class ViewController: UIViewController {
         } else {
             if presentState == "multi" || presentState == "div" {
                 if beforeMultiState == "" {
-                    result = calculateTwoNumbers(state: presentState, num1: result, num2: inputNum)
+                    result = temp
                 } else {
                     result = calculateTwoNumbers(state: beforeMultiState, num1: result, num2: temp)
                 }
