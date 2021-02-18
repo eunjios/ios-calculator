@@ -1,7 +1,8 @@
-[![HitCount](http://hits.dwyl.com/eunjios/ios-calculator.svg)](http://hits.dwyl.com/eunjios/ios-calculator)
-
 # :iphone: iOS Calculator
- ![ios-calculator-simulator](https://user-images.githubusercontent.com/77034159/107759089-284d1280-6d6b-11eb-9fef-9e900b6d2261.gif)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Feunjios%2Fios-calculator&count_bg=%23C8963D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+![GitHub all releases](https://img.shields.io/github/downloads/eunjios/ios-calculator/total) ![GitHub last commit](https://img.shields.io/github/last-commit/eunjios/ios-calculator)
+
+![ios-calculator-simulator](https://user-images.githubusercontent.com/77034159/107759089-284d1280-6d6b-11eb-9fef-9e900b6d2261.gif)
 
 ## :pushpin: Introduction
 iPhone에 내장되어 있는 계산기와 기능 및 디자인을 동일하게 만든 iOS 앱 입니다.  
