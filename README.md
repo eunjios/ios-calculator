@@ -1,3 +1,5 @@
+[![HitCount](http://hits.dwyl.com/eunjios/ios-calculator.svg)](http://hits.dwyl.com/eunjios/ios-calculator)
+
 # :iphone: iOS Calculator
  ![ios-calculator-simulator](https://user-images.githubusercontent.com/77034159/107759089-284d1280-6d6b-11eb-9fef-9e900b6d2261.gif)
 
