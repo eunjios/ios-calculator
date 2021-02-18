@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     // 과거 상태와 현재 상태 따로 저장
     var pastState = ""
-    var presentState = ""       // sum, sub, multi, div, eq
+    var presentState = ""       // sum, sub, multi, div
     var beforeMultiState = ""   // 곱하기나 나누기 전에 + 인지 - 인지를 저장하는 값
     
     @IBOutlet weak var currentValueLabel: UILabel!
@@ -84,16 +84,11 @@ class ViewController: UIViewController {
         // 과거 상태가 곱하기나 나누기면, result에 temp 값을 더하거나 뺌
         // 과거 상태가 더하기나 빼기면, result에 inputNum 값을 연산
         if pastState == "multi" || pastState == "div" {
-            if beforeMultiState == "" {
-                result = calculateTwoNumbers(state: pastState, num1: result, num2: inputNum)
-            } else {
+            if beforeMultiState == "" {     // (맨 처음) 곱하기/나누기 -> 더하기 인 경우
+                result = temp
+            } else {                        // ...(많은 연산들)... 이후 -> 더하기 인 경우
                 result = calculateTwoNumbers(state: beforeMultiState, num1: result, num2: temp)
             }
-//            if beforeMultiState == "sum" {
-//                result = calculateTwoNumbers(state: "sum", num1: result, num2: temp)
-//            } else if beforeMultiState == "sub" {
-//                result = calculateTwoNumbers(state: "sub", num1: result, num2: temp)
-//            }
         } else {        // sum or sub
             result = calculateTwoNumbers(state: pastState, num1: result, num2: inputNum)
         }
@@ -114,7 +109,7 @@ class ViewController: UIViewController {
         
         if pastState == "multi" || pastState == "div" {
             if beforeMultiState == "" {
-                result = calculateTwoNumbers(state: pastState, num1: result, num2: inputNum)
+                result = temp
             } else {
                 result = calculateTwoNumbers(state: beforeMultiState, num1: result, num2: temp)
             }
@@ -132,10 +127,6 @@ class ViewController: UIViewController {
         pastState = presentState
         presentState = "multi"
         inputNum = Double(currentValueLabel.text ?? "0")!
-        
-        if beforeMultiState == "" {
-            beforeMultiState = "sum"
-        }
         
         // 과거 상태가 sum 이면 현재 inputNum 을 temp 에 할당
         // 과거 상태가 sub 이면 현재 inputNum 에 - 취한 값을 할당
@@ -156,10 +147,6 @@ class ViewController: UIViewController {
         pastState = presentState
         presentState = "div"
         inputNum = Double(currentValueLabel.text ?? "0")!
-        
-        if beforeMultiState == "" {
-            beforeMultiState = "sum"
-        }
         
         if pastState == "multi" || pastState == "div" {
             temp = calculateTwoNumbers(state: pastState, num1: temp, num2: inputNum)
@@ -189,7 +176,7 @@ class ViewController: UIViewController {
             currentValueLabel.text = intOrDouble(result)
         }
         pastState = ""
-        presentState = "eq"
+        presentState = ""
         beforeMultiState = ""
         temp = 0.0
         result = 0.0
